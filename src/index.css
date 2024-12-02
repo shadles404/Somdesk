@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(0) translateX(20px); }
+  75% { transform: translateY(20px) translateX(10px); }
+}
+
+@keyframes particle-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(400px, -400px); }
+}
+
+.animate-float-slow {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 20s ease-in-out infinite;
+  animation-delay: -10s;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.particle {
+  @apply absolute w-2 h-2 bg-blue-400/30 rounded-full;
+  animation: particle-move 15s linear infinite;
+}
+
+.delay-2 {
+  animation-delay: -5s;
+  left: 40%;
+}
+
+.delay-4 {
+  animation-delay: -10s;
+  left: 60%;
+}
